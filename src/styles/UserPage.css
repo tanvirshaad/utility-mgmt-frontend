@@ -1,0 +1,7 @@
+.user-page {
+  min-height: calc(100vh - 200px);
+}
+
+.calculator-form {
+  margin-bottom: 2rem;
+}
