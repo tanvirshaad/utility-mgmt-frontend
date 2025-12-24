@@ -23,6 +23,15 @@ const AdminPage: React.FC = () => {
         }
     }, [isAuthenticated]);
 
+    // Populate form fields when current config is loaded
+    useEffect(() => {
+        if (currentConfig) {
+            setRatePerUnit(currentConfig.ratePerUnit.toString());
+            setVatPercentage(currentConfig.vatPercentage.toString());
+            setFixedServiceCharge(currentConfig.fixedServiceCharge.toString());
+        }
+    }, [currentConfig]);
+
     const fetchCurrentConfig = async () => {
         console.log('Fetching current configuration...');
         setConfigLoading(true);
